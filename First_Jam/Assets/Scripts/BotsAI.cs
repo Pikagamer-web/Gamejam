@@ -9,6 +9,7 @@ public class BotsAI : MonoBehaviour
     NavMeshAgent agent;
     Transform currentWayPoint;
     CharacterControllerMine player;
+    int flag = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class BotsAI : MonoBehaviour
     {
         if (!player.HasCorruptionStarted)
         {
+            if(flag != 0) { agent.SetDestination(wayPoint1.position); currentWayPoint = wayPoint1; flag = 0; }
             if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z),
             new Vector2(currentWayPoint.position.x, currentWayPoint.position.z)) <= agent.stoppingDistance)
             {
@@ -35,6 +37,7 @@ public class BotsAI : MonoBehaviour
         else
         {
             agent.SetDestination(player.transform.position);
+            flag = 1;
         }
         
 

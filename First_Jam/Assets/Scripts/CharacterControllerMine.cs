@@ -32,6 +32,12 @@ public class CharacterControllerMine : MonoBehaviour
     int matswitch2 = 0;
     Renderer rend;
     public bool HasCorruptionStarted = false;
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    public CheckPoint lastCheckpoint;
+    public bool IsRewinding = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,17 +49,43 @@ public class CharacterControllerMine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (!IsRewinding)
+        {
+            Movement();
+        }
+        else
+        {
+            PerformRewinding();
+        }
+       
         ForceFieldBehaviour();
         RewindTime();
     }
 
+    private void PerformRewinding()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, lastCheckpoint.position, 20f * Time.deltaTime);
+        if(Vector2.Distance(transform.position, lastCheckpoint.position) < 1f)
+        {
+            if (!ForceField.gameObject.activeInHierarchy) { ForceField.gameObject.SetActive(true); }
+            fieldStrength = lastCheckpoint.c_FieldStrength;
+            RewindTimeBar = 0;
+            chipCorruption = 0;
+            HasCorruptionStarted = false;
+            IsRewinding = false;
+            matSwitch = 0;
+            IsHittingWithBots = false;
+        }
+    }
+
     private void RewindTime()
     {
-        if(RewindTimeBar >= 100 && Input.GetKeyDown(KeyCode.X))
+        if(RewindTimeBar >= 100 && Input.GetKeyDown(KeyCode.X) && lastCheckpoint!=null)
         {
             RewindTimeBar = 0;
-            //Rewinding Effect
+            IsRewinding = true;
+            //Rewinding Effect. its an event!
+
         }
     }
 
@@ -113,7 +145,7 @@ public class CharacterControllerMine : MonoBehaviour
 
         if (playerVel.y < 0 && groundCheck.IsGrounded) { playerVel.y = 0; }
         Vector3 move = transform.right * h + transform.forward * v;
-
+        move = move.normalized;
         cc.Move(move * Time.deltaTime * speed);
         Quaternion targetRot = Quaternion.Euler(transform.eulerAngles.x, camHolder.eulerAngles.y, transform.eulerAngles.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, RotationDamping);

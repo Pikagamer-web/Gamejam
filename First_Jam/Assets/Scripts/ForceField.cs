@@ -9,7 +9,7 @@ public class ForceField : MonoBehaviour
 
     private void OnTriggerEnter(Collider botTriggerCollider)
     {
-        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd"))
+        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd") && !me.IsRewinding)
         {
             me.IsHittingWithBots = true;
            transform.rotation = Quaternion.LookRotation((transform.root.transform.position - botTriggerCollider.transform.root.transform.position));
@@ -18,7 +18,7 @@ public class ForceField : MonoBehaviour
     }
     private void OnTriggerStay(Collider botTriggerCollider)
     {
-        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd"))
+        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd") && !me.IsRewinding)
         {
             me.IsHittingWithBots = true;
             transform.rotation = Quaternion.LookRotation((transform.root.transform.position - botTriggerCollider.transform.root.transform.position));
@@ -28,7 +28,7 @@ public class ForceField : MonoBehaviour
 
     private void OnTriggerExit(Collider botTriggerCollider)
     {
-        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd"))
+        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd") && !me.IsRewinding)
         {
             me.IsHittingWithBots = false;
             transform.rotation = Quaternion.LookRotation((transform.root.transform.position - botTriggerCollider.transform.root.transform.position));

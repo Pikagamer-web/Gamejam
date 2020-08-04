@@ -64,10 +64,16 @@ public class ScifiClock : MonoBehaviour
                    
                     
                         player.RewindTimeBar += currentfilling;
-                   
-                    
+
+
+                }
+                else
+                {
+                    gameObject.SetActive(false);
                 }
             }
         }
     }
+
+    
 }
