@@ -33,7 +33,7 @@ public class CamFollow : MonoBehaviour
     void LateUpdate()
     {
         // Set the pos
-        Vector3 targetPos = Vector3.MoveTowards(transform.position, target.position, translationDamping*Time.deltaTime);
+        Vector3 targetPos =  Vector3.MoveTowards(transform.position, target.position, translationDamping*Time.deltaTime);
         transform.position = targetPos;
         cam.localPosition = offset;
        

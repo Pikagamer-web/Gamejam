@@ -26,15 +26,14 @@ public class PlayerController : MonoBehaviour
       //      RewindCheckpoints[i] = holder[i].position; 
       //  }
         rb = GetComponent<Rigidbody>();
-        
+        //rb.isKinematic = true;
         groundCheck = GetComponentInChildren<GroundCheck>();
     }
 
     private void Update()
     {
         jumpPressed = Input.GetButtonDown("Jump");
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
+        
 
         // jump 
         if (jumpPressed && currentJumpNo < NoOfJumpingsAllowedInMidAir)
@@ -55,11 +54,14 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       
-        rb.angularVelocity =  Vector3.zero;
-        Vector3 move = transform.right * h *(speed/2f) + transform.forward * v *speed;
+        h = Input.GetAxis("Horizontal");
+        v = Input.GetAxis("Vertical");
+        //rb.angularVelocity =  Vector3.zero;
+        Vector3 move = transform.right * h *(speed/2f)*Time.deltaTime + transform.forward * v *speed*Time.deltaTime;
         move = new Vector3(move.x, rb.velocity.y, move.z);
-        rb.velocity = move;
+         rb.velocity = move;
+       // rb.MovePosition(transform.position+move*Time.deltaTime);
+      
 
        
     }
