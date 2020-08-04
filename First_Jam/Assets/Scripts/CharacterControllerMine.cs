@@ -45,7 +45,16 @@ public class CharacterControllerMine : MonoBehaviour
     {
         Movement();
         ForceFieldBehaviour();
-        
+        RewindTime();
+    }
+
+    private void RewindTime()
+    {
+        if(RewindTimeBar >= 100 && Input.GetKeyDown(KeyCode.X))
+        {
+            RewindTimeBar = 0;
+            //Rewinding Effect
+        }
     }
 
     private void ForceFieldBehaviour()

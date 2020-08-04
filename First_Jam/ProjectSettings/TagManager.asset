@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Crowd
+  - Clock
   layers:
   - Default
   - TransparentFX
