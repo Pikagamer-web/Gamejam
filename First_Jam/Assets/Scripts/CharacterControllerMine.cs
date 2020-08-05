@@ -50,6 +50,10 @@ public class CharacterControllerMine : MonoBehaviour
     public PlayerState playerState;
     [SerializeField] Animator GraphicsAnimator;
 
+    //___________________________________
+
+    float noOfSecCanBeRewinded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +66,7 @@ public class CharacterControllerMine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CalculateRewindingSeconds();
         if (!IsRewinding)
         {
             Movement();
@@ -73,6 +78,11 @@ public class CharacterControllerMine : MonoBehaviour
        
         ForceFieldBehaviour();
         RewindTime();
+    }
+
+    private void CalculateRewindingSeconds()
+    {
+        noOfSecCanBeRewinded = 0.3f * RewindTimeBar;
     }
 
     private void PerformRewinding()
@@ -93,13 +103,18 @@ public class CharacterControllerMine : MonoBehaviour
 
     private void RewindTime()
     {
-        if(RewindTimeBar >= 100 && Input.GetKeyDown(KeyCode.X) && lastCheckpoint!=null)
-        {
-            RewindTimeBar = 0;
-            IsRewinding = true;
-            //Rewinding Effect. its an event!
+        /*  if(RewindTimeBar >= 100 && Input.GetKeyDown(KeyCode.X) && lastCheckpoint!=null)
+          {
+              RewindTimeBar = 0;
+              IsRewinding = true;
+              //Rewinding Effect. its an event!
 
-        }
+          }*/
+
+        if (RewindTimeBar != 0 && Input.GetKeyDown(KeyCode.X)) // // We have to rewind the objects and self rather than the time itswelf a sa whole
+        {
+            //PerformRewind(noOfSec) 
+        }     
     }
 
     private void ForceFieldBehaviour()
