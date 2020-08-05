@@ -1318,6 +1318,8 @@ MonoBehaviour:
   lastCheckpoint: {fileID: 0}
   IsRewinding: 0
   currentClock: {fileID: 0}
+  playerState: 0
+  GraphicsAnimator: {fileID: 2034397430}
 --- !u!54 &126108600
 Rigidbody:
   m_ObjectHideFlags: 0

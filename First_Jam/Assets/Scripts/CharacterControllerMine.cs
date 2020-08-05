@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+public enum PlayerState { idle, speedingUP, turningLeft, turningRight}
 
 
 public class CharacterControllerMine : MonoBehaviour
@@ -45,12 +45,18 @@ public class CharacterControllerMine : MonoBehaviour
     //___________________________________________
     public ScifiClock currentClock;
 
+    //__________________________________________
+
+    public PlayerState playerState;
+    [SerializeField] Animator GraphicsAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
         groundCheck = GetComponentInChildren<GroundCheck>();
         rend = ForceField.GetComponent<Renderer>();
+        playerState = PlayerState.idle;
     }
 
     // Update is called once per frame
@@ -150,7 +156,14 @@ public class CharacterControllerMine : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         jumpPressed = Input.GetKeyDown(KeyCode.Space);
+        //____________________
+        if (v > 0 ) { playerState = PlayerState.speedingUP; }
+        if( h > 0) { playerState = PlayerState.turningRight; }
+        if (h < 0) { playerState = PlayerState.turningLeft; }
+        if(h==0 && v == 0) { playerState = PlayerState.idle; }
 
+        GraphicsAnimator.SetInteger("StateIndex", (int)playerState);
+        //_____________________
         if (playerVel.y < 0 && groundCheck.IsGrounded) { playerVel.y = 0; }
         Vector3 move = transform.right * h + transform.forward * v;
         move = move.normalized;
