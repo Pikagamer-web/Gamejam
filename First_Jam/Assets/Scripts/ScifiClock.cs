@@ -14,7 +14,7 @@ public class ScifiClock : MonoBehaviour
     public float RewindBarFillingAmount = 20f;
     float currentfilling = 0;
 
-    float timer =0;
+    public float timer =0;
     float initialRewind;
     private void Start()
     {
@@ -48,7 +48,7 @@ public class ScifiClock : MonoBehaviour
         
         if (other.transform.root.transform.gameObject.CompareTag("Player"))
         {
-            
+            player.currentClock = this;
             timer += Time.deltaTime;
             if (timer < RewindTime)
             {
@@ -57,7 +57,7 @@ public class ScifiClock : MonoBehaviour
             }
             else
             {
-
+              
                 currentfilling += Time.deltaTime * PlayerRewinderBarSpeed;
                 if (player.RewindTimeBar < RewindBarFillingAmount+initialRewind && player.RewindTimeBar<=100)
                 {
@@ -69,6 +69,7 @@ public class ScifiClock : MonoBehaviour
                 }
                 else
                 {
+                    timer = 0;
                     gameObject.SetActive(false);
                 }
             }

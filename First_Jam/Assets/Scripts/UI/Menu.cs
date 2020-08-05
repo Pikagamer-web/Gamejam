@@ -35,4 +35,9 @@ public class Menu : MonoBehaviour
         SceneManager.LoadSceneAsync(1);
         flag = 0;
     }
+
+    public void OnClickOptions()
+    {
+
+    }
 }

@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+
 public class CharacterControllerMine : MonoBehaviour
 {
 
@@ -37,6 +41,9 @@ public class CharacterControllerMine : MonoBehaviour
 
     public CheckPoint lastCheckpoint;
     public bool IsRewinding = false;
+
+    //___________________________________________
+    public ScifiClock currentClock;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +106,7 @@ public class CharacterControllerMine : MonoBehaviour
                 rend.material = ForceFieldRingMat;
                 matSwitch = 1;
                 matswitch2 = 0;
+                ForceField.transform.rotation = Quaternion.identity;
             }
             angle += Time.deltaTime * 0.3f;
             if (angle > 360) { angle = 0; }

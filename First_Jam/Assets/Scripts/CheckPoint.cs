@@ -15,13 +15,13 @@ public class CheckPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       mat = GetComponent<Renderer>().material;
+        mat = GetComponent<Renderer>().material;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerMine>();
         position = transform.position;
     }
     private void Update()
     {
-      
+        mat.mainTextureOffset = new Vector2(0, i++);
        
     }
     private void OnTriggerEnter(Collider other)
