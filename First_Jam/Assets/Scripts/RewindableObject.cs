@@ -12,39 +12,51 @@ public class RewindableObject : MonoBehaviour
     [SerializeField]bool firstfill = true;
     [SerializeField] CharacterControllerMine player;
     [SerializeField] float secondsToRewind;
-    [SerializeField] bool hasStaretedRewinding = false;
-    [SerializeField] int rewindSwitch = 0; 
+    public bool hasStaretedRewinding = false;
+    [SerializeField] int rewindSwitch = 0;
+    [SerializeField] Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _ = TryGetComponent<Rigidbody>(out rb);
     }
 
     // Update is called once per frame
     void Update()
     {
-       // if (!player.IsRewinding)
-       // {
+        if (!hasStaretedRewinding)
+        {
             FillData();
-       // }
-       // else
-       // {
-       //    
-       //     ExecuteRewind();
-       // }
+            rewindSwitch = 0;
+        }
+        else
+        {
+          
+            ExecuteRewind();
+        }
         
     }
 
     private void ExecuteRewind()
     {
-        currentTargetIndex = (int)((1 / 0.6f) * secondsToRewind);
+        rb.isKinematic = true;
+        if (rewindSwitch == 0) { currentTargetIndex = 9; rewindSwitch = 1; }
         transform.position = Vector3.MoveTowards(transform.position, config.positions[currentTargetIndex], 10f * Time.deltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(config.rotations[currentTargetIndex]), 0.2f);
-        if(Vector3.Distance(transform.position, config.positions[currentTargetIndex]) < 0.1f) { currentTargetIndex--; }
+        if(Vector3.Distance(transform.position, config.positions[currentTargetIndex]) < 0.1f)
+        { 
+            currentTargetIndex--;
+            if (currentTargetIndex < 0)
+            {
+                rewindSwitch = 0;
+                hasStaretedRewinding = false;
+            }
+        }
     }
 
     private void FillData()
     {
+        rb.isKinematic = false;
         timer += Time.deltaTime;
 
         if (timer >= 0.6f && firstfill)         // Values arfe being filled for the first time
@@ -53,36 +65,21 @@ public class RewindableObject : MonoBehaviour
             config.rotations[index] = transform.eulerAngles;
             ++index;
             timer = 0;
-            if (index > 49) { firstfill = false; timer = 0; }
+            if (index > 9) { firstfill = false; timer = 0; }
         }
         else
         {
             if (timer >= 0.6f)
             {
                 timer = 0;
-                Vector3 pos = Vector3.zero;
-                Vector3 rot = transform.eulerAngles; 
-                for (int i = 49; i >= 0; i--)
-                {
-
-                    if (i != 0)
-                    {
-                        pos = config.positions[i - 1];
-                        rot = config.rotations[i - 1];
-                        config.positions[i - 1] = config.positions[i];
-                        config.rotations[i - 1] = config.rotations[i];
-                        if (i == 49)
-                        {
-                            config.positions[i] = transform.position;
-                            config.rotations[i] = transform.eulerAngles;
-                        }
-                    }
-                  
-                }
                 
-               
-
-
+                for (int i = 0; i< 10; i++)
+                {
+                    config.positions[i] = config.positions[i + 1];
+                    config.rotations[i] = config.rotations[i + 1];
+                }
+                config.positions[9] = transform.position;
+                config.rotations[9] = transform.eulerAngles;
             }
         }
     }

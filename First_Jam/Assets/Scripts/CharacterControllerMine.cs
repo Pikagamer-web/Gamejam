@@ -52,7 +52,9 @@ public class CharacterControllerMine : MonoBehaviour
 
     //___________________________________
 
-    float noOfSecCanBeRewinded;
+    public float noOfSecCanBeRewinded;
+    public RewindableObject currentREwindTarget;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -82,7 +84,7 @@ public class CharacterControllerMine : MonoBehaviour
 
     private void CalculateRewindingSeconds()
     {
-        noOfSecCanBeRewinded = 0.3f * RewindTimeBar;
+        noOfSecCanBeRewinded = 6f;
     }
 
     private void PerformRewinding()
@@ -111,9 +113,14 @@ public class CharacterControllerMine : MonoBehaviour
 
           }*/
 
-        if (RewindTimeBar != 0 && Input.GetKeyDown(KeyCode.X)) // // We have to rewind the objects and self rather than the time itswelf a sa whole
+        if (RewindTimeBar >= 20f && Input.GetMouseButtonDown(0)) // // We have to rewind the objects and self rather than the time itswelf a sa whole
         {
-            //PerformRewind(noOfSec) 
+            if (currentREwindTarget != null)
+            {
+                currentREwindTarget.hasStaretedRewinding = true;
+                RewindTimeBar -= 20f;
+            }
+            
         }     
     }
 

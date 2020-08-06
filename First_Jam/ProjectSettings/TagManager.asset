@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Crowd
   - Clock
+  - RewindableObject
   layers:
   - Default
   - TransparentFX
