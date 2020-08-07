@@ -8,7 +8,7 @@ public class RewindableObject : MonoBehaviour
 {
     [SerializeField] ObjectConfig config;
     [SerializeField] float timer =0, timer2 =0;
-    [SerializeField] int index=0, currentTargetIndex = 49;
+    [SerializeField] int index=0, currentTargetIndex = 9;
     [SerializeField]bool firstfill = true;
     [SerializeField] CharacterControllerMine player;
     [SerializeField] float secondsToRewind;
@@ -73,7 +73,7 @@ public class RewindableObject : MonoBehaviour
             {
                 timer = 0;
                 
-                for (int i = 0; i< 10; i++)
+                for (int i = 0; i< 9; i++)
                 {
                     config.positions[i] = config.positions[i + 1];
                     config.rotations[i] = config.rotations[i + 1];

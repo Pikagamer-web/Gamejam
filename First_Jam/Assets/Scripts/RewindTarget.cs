@@ -6,6 +6,8 @@ public class RewindTarget : MonoBehaviour
 {
     [SerializeField] CharacterControllerMine player;
     [SerializeField] Camera cam;
+    public bool ShowRewindTarget = false;
+    [SerializeField] SwitchDeactivator sd;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,21 @@ public class RewindTarget : MonoBehaviour
             {
                 Debug.Log("FOUNNNDD SUSTBIINNNNNN");
                 player.currentREwindTarget = hitInfo.collider.gameObject.GetComponent<RewindableObject>();
-                
+                ShowRewindTarget = true;
+            }
+            else
+            {
+                player.currentREwindTarget = null;
+                ShowRewindTarget = false;
+            }
+
+            if (hitInfo.collider.transform.gameObject.CompareTag("Switch"))
+            {
+                sd.CanDeactiveSwitch = true;
+            }
+            else
+            {
+                sd.CanDeactiveSwitch = false;
             }
         }
 

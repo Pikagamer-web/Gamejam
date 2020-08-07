@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public enum PlayerState { idle, speedingUP, turningLeft, turningRight}
 
@@ -21,7 +21,7 @@ public class CharacterControllerMine : MonoBehaviour
     public int currentJumpNo;
     bool isJumping = false;
     Vector3 playerVel = Vector3.zero;
-
+    
     //_____________________________________________
 
     public Transform ForceField; //Hides u from aliens
@@ -54,8 +54,16 @@ public class CharacterControllerMine : MonoBehaviour
 
     public float noOfSecCanBeRewinded;
     public RewindableObject currentREwindTarget;
-    
 
+    //__________________________________
+
+    [SerializeField] GameObject gameOverImage, credits;
+    [SerializeField] GameObject gameOverCanvas;
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +71,9 @@ public class CharacterControllerMine : MonoBehaviour
         groundCheck = GetComponentInChildren<GroundCheck>();
         rend = ForceField.GetComponent<Renderer>();
         playerState = PlayerState.idle;
+        gameOverImage.SetActive(false);
+        credits.SetActive(false);
+        gameOverCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -170,7 +181,19 @@ public class CharacterControllerMine : MonoBehaviour
 
     private void OnGameOver()
     {
-        throw new NotImplementedException();
+        gameOverCanvas.SetActive(true);
+        gameOverImage.SetActive(true);
+        Invoke("ShowCredits", 1f);
+       
+    }
+    void ShowCredits()
+    {
+        credits.SetActive(true);
+        Invoke("LoadMenu", 5f);
+    }
+    void LoadMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 
     void Movement()

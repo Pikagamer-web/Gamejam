@@ -9,29 +9,32 @@ public class ForceField : MonoBehaviour
 
     private void OnTriggerEnter(Collider botTriggerCollider)
     {
-        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd") && !me.IsRewinding)
+        if (botTriggerCollider.transform.gameObject.CompareTag("Crowd") && !me.IsRewinding)
         {
+            Debug.Log("HITTTTTING FFFFFFOOOOORRRCCCEEFIEKD");
+            AudioManager.instance.PlayShieldErrorSound(transform.position);
             me.IsHittingWithBots = true;
-           transform.rotation = Quaternion.LookRotation((transform.root.transform.position - botTriggerCollider.transform.root.transform.position));
+           transform.rotation = Quaternion.LookRotation((transform.position - botTriggerCollider.transform.position));
             me.fieldStrength -= 10f;
         }
     }
     private void OnTriggerStay(Collider botTriggerCollider)
     {
-        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd") && !me.IsRewinding)
+        if (botTriggerCollider.transform.gameObject.CompareTag("Crowd") && !me.IsRewinding)
         {
             me.IsHittingWithBots = true;
-            transform.rotation = Quaternion.LookRotation((transform.root.transform.position - botTriggerCollider.transform.root.transform.position));
+            transform.rotation = Quaternion.LookRotation((transform.position - botTriggerCollider.transform.position));
             me.fieldStrength -= 0.5f;
         }
     }
 
     private void OnTriggerExit(Collider botTriggerCollider)
     {
-        if (botTriggerCollider.transform.root.gameObject.CompareTag("Crowd") && !me.IsRewinding)
+        if (botTriggerCollider.transform.gameObject.CompareTag("Crowd") && !me.IsRewinding)
         {
+            AudioManager.instance.StopShieldErrorSound();
             me.IsHittingWithBots = false;
-            transform.rotation = Quaternion.LookRotation((transform.root.transform.position - botTriggerCollider.transform.root.transform.position));
+            transform.rotation = Quaternion.LookRotation((transform.position - botTriggerCollider.transform.position));
             
         }
     }

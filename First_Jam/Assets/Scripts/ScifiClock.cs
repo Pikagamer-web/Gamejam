@@ -14,7 +14,7 @@ public class ScifiClock : MonoBehaviour
     public float RewindBarFillingAmount = 20f;
     float currentfilling = 0;
 
-    public float timer =0;
+    public float timer = 0;
     float initialRewind;
     private void Start()
     {
@@ -26,7 +26,7 @@ public class ScifiClock : MonoBehaviour
     void Update()
     {
         Lavitate();
-       
+
     }
 
     private void Lavitate()
@@ -45,7 +45,7 @@ public class ScifiClock : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        
+
         if (other.transform.root.transform.gameObject.CompareTag("Player"))
         {
             player.currentClock = this;
@@ -53,17 +53,18 @@ public class ScifiClock : MonoBehaviour
             if (timer < RewindTime)
             {
                 //RewindingClock
+                AudioManager.instance.PlayClockTickingSound(transform.position);
                 Debug.Log("RewindingClock");
             }
             else
             {
-              
+                AudioManager.instance.StopClockTickingSound();
                 currentfilling += Time.deltaTime * PlayerRewinderBarSpeed;
-                if (player.RewindTimeBar < RewindBarFillingAmount+initialRewind && player.RewindTimeBar<=100)
+                if (player.RewindTimeBar < RewindBarFillingAmount + initialRewind && player.RewindTimeBar <= 100)
                 {
-                   
-                    
-                        player.RewindTimeBar += currentfilling;
+
+
+                    player.RewindTimeBar += currentfilling*100f;
 
 
                 }
@@ -76,5 +77,11 @@ public class ScifiClock : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.root.transform.gameObject.CompareTag("Player"))
+        {
+            AudioManager.instance.StopClockTickingSound();
+        }
+    }
 }

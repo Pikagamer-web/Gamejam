@@ -12,12 +12,17 @@ public class GamePlayUIManager : MonoBehaviour
     [SerializeField] Image ClockRewindFill;
     [SerializeField] Image TimeRewindFill;
     [SerializeField] CharacterControllerMine player;
+    Vector3 playerStartPosition;
     int tempSwitch = 0;
     [SerializeField] TextMeshProUGUI textDisplay;
     float score = 0;
+
+    [SerializeField] RewindTarget rewindTarget;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerStartPosition = player.transform.position;
         textDisplay.text = Mathf.Abs(score).ToString();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerMine>();
         FieldStrengthBar.rectTransform.localScale = new Vector3(0.93f, FieldStrengthBar.rectTransform.localScale.y, FieldStrengthBar.rectTransform.localScale.z) ;
@@ -28,7 +33,7 @@ public class GamePlayUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime;
+        score = ((player.transform.position.z-playerStartPosition.z)/790f)*1000;
         int displayScore = (int)Mathf.Abs(score);
        
         textDisplay.SetText(displayScore);
@@ -59,5 +64,12 @@ public class GamePlayUIManager : MonoBehaviour
         //TimeRewindBar
         barFillVal2 = player.RewindTimeBar / 100f;
         TimeRewindFill.fillAmount = barFillVal2;
+
+        //Rewinmd Target found UI
+
+        if (rewindTarget.ShowRewindTarget)
+        {
+            //Shoe rewind target visuals
+        }
     }
 }

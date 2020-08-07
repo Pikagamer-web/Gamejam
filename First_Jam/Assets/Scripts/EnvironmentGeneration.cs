@@ -5,34 +5,31 @@ using UnityEngine;
 
 public class EnvironmentGeneration : MonoBehaviour
 {
-    public Transform RoadSet1, RoadSet2, RoadSet3, RoadSet4;
-    Vector3 instantiationPos = Vector3.zero;
-    Transform currentInstantiatedTransform;
-    // Start is called before the first frame update
-    void Start()
-    {
-       // GenerateEnvt();
-    }
+    [SerializeField] GameObject LevelUnit1, LevelUnit2, LevelUnit3;
+    public int CurrentlyOnLevel ;
+   
 
-    private void GenerateEnvt()
-    {
-        for(int i =0; i<15; i++)
-        {
-            int val = (int)UnityEngine.Random.value * 3;  // 0-3
-            switch (val)
-            {
-                case 0: Instantiate(RoadSet1.gameObject, instantiationPos, Quaternion.identity); currentInstantiatedTransform = RoadSet1; break;
-                case 1: Instantiate(RoadSet2.gameObject, instantiationPos, Quaternion.identity); currentInstantiatedTransform = RoadSet2; break;
-                case 2: Instantiate(RoadSet3.gameObject, instantiationPos, Quaternion.identity); currentInstantiatedTransform = RoadSet3; break;
-                case 3: Instantiate(RoadSet4.gameObject, instantiationPos, Quaternion.identity); currentInstantiatedTransform = RoadSet4; break;
-            }
-            instantiationPos = currentInstantiatedTransform.position + Vector3.forward*15.99f;
-        }
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
-        
+        switch (CurrentlyOnLevel)
+        {
+            case 1:
+                if(!(LevelUnit2.transform.position == LevelUnit1.transform.position + Vector3.forward * 189f))
+                LevelUnit2.transform.position = LevelUnit1.transform.position + Vector3.forward* 189f;
+                break;
+            case 2:
+                if (!(LevelUnit3.transform.position == LevelUnit2.transform.position + Vector3.forward * 189f))
+                    LevelUnit3.transform.position = LevelUnit2.transform.position + Vector3.forward * 189f;
+                break;
+            case 3:
+                if (!(LevelUnit1.transform.position == LevelUnit3.transform.position + Vector3.forward * 189f))
+                    LevelUnit1.transform.position = LevelUnit3.transform.position + Vector3.forward * 189f;
+                break;
+           
+        }
     }
+
+    
 }

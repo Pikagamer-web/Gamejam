@@ -8,6 +8,7 @@ TagManager:
   - Crowd
   - Clock
   - RewindableObject
+  - Switch
   layers:
   - Default
   - TransparentFX

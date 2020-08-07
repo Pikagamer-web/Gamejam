@@ -9,11 +9,17 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] VideoPlayer videoPlayer;
     
-    [SerializeField] Canvas Menucanvas, LogoAnimCanvas;
+    [SerializeField] Canvas Menucanvas, LogoAnimCanvas, InstructionCanvas;
     int flag =0;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     void Start()
     {
+        InstructionCanvas.gameObject.SetActive(false);
         Menucanvas.gameObject.SetActive(false);
         LogoAnimCanvas.gameObject.SetActive(true);
     }
@@ -36,8 +42,13 @@ public class Menu : MonoBehaviour
         flag = 0;
     }
 
-    public void OnClickOptions()
+    public void OnClickInstructions()
     {
+        InstructionCanvas.gameObject.SetActive(true);
+    }
 
+    public void OnXInstructions()
+    {
+        InstructionCanvas.gameObject.SetActive(false);
     }
 }
