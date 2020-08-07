@@ -27,6 +27,8 @@ public class EnergyCube : MonoBehaviour
                 player.fieldStrength += 10f;
                 gameObject.SetActive(false);
             }
+
+            if (!player.ForceField.gameObject.activeInHierarchy) { player.ForceField.gameObject.SetActive(true); player.fieldStrength = 10f; }
             
         }
     }

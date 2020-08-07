@@ -60,6 +60,10 @@ public class CharacterControllerMine : MonoBehaviour
     [SerializeField] GameObject gameOverImage, credits;
     [SerializeField] GameObject gameOverCanvas;
 
+    //____________________________________
+
+    [SerializeField] FieldConfig fieldConfig;
+    float fieldTimer = 0;
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -74,11 +78,13 @@ public class CharacterControllerMine : MonoBehaviour
         gameOverImage.SetActive(false);
         credits.SetActive(false);
         gameOverCanvas.SetActive(false);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         CalculateRewindingSeconds();
         if (!IsRewinding)
         {
@@ -91,6 +97,39 @@ public class CharacterControllerMine : MonoBehaviour
        
         ForceFieldBehaviour();
         RewindTime();
+
+        fieldTimer += Time.deltaTime;
+        if (fieldTimer > 0.6f)
+        {
+            fieldTimer = 0;
+            for (int i=0; i< 9; i++)
+            {
+                fieldConfig.fieldStrengthValues[i] = fieldConfig.fieldStrengthValues[i + 1];
+
+            }
+            fieldConfig.fieldStrengthValues[9] = fieldStrength;
+        }
+
+        RewindField();
+    }
+
+    private void RewindField()
+    {
+        if (Input.GetMouseButtonDown(1) &&  RewindTimeBar>=20f)
+        {
+            if(fieldConfig.fieldStrengthValues[0] >0 && !ForceField.gameObject.activeInHierarchy)
+            {
+                HasCorruptionStarted = false;
+                chipCorruption = 0;
+                ForceField.gameObject.SetActive(true);
+                rend.material = ForceFieldRingMat;
+                matSwitch = 1;
+
+
+            }
+            fieldStrength = fieldConfig.fieldStrengthValues[0];
+            RewindTimeBar -= 20f;
+        }
     }
 
     private void CalculateRewindingSeconds()
@@ -161,7 +200,7 @@ public class CharacterControllerMine : MonoBehaviour
             }
             //Rotate Inside OncollisionEnter, stay
 
-            if (fieldStrength < 0)
+            if (fieldStrength < 0 && !HasCorruptionStarted)
             {
                 ForceField.gameObject.SetActive(false);
                 HasCorruptionStarted = true;

@@ -9,6 +9,7 @@ TagManager:
   - Clock
   - RewindableObject
   - Switch
+  - Manager
   layers:
   - Default
   - TransparentFX

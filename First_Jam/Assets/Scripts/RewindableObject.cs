@@ -59,7 +59,7 @@ public class RewindableObject : MonoBehaviour
         rb.isKinematic = false;
         timer += Time.deltaTime;
 
-        if (timer >= 0.6f && firstfill)         // Values arfe being filled for the first time
+       /* if (timer >= 0.6f && firstfill)         // Values arfe being filled for the first time
         {
             config.positions[index] = transform.position;
             config.rotations[index] = transform.eulerAngles;
@@ -68,7 +68,7 @@ public class RewindableObject : MonoBehaviour
             if (index > 9) { firstfill = false; timer = 0; }
         }
         else
-        {
+        {*/
             if (timer >= 0.6f)
             {
                 timer = 0;
@@ -81,7 +81,7 @@ public class RewindableObject : MonoBehaviour
                 config.positions[9] = transform.position;
                 config.rotations[9] = transform.eulerAngles;
             }
-        }
+        //}
     }
 }
 

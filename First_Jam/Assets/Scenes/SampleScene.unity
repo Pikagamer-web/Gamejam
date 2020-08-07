@@ -1392,6 +1392,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1028443303}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &33069418
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1663,6 +1664,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 870909673}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &40274073
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2058,6 +2060,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1134256606}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &50154546
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4024,6 +4027,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2059115963}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &108078496
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4182,6 +4186,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 872112977}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &113187799
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4320,6 +4325,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 487714079}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &120199537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4621,12 +4627,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce00f974fc795714994c046b788766f1, type: 3}
---- !u!4 &125237058 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2158039298445150328, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &126108592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,6 +4733,7 @@ MonoBehaviour:
   gameOverImage: {fileID: 1261914826}
   credits: {fileID: 23543223}
   gameOverCanvas: {fileID: 1178827691}
+  fieldConfig: {fileID: 11400000, guid: c37a84d421a70594bb5c5fb7a474d974, type: 2}
 --- !u!54 &126108600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5097,6 +5098,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1702344473}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &143392065
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5290,6 +5292,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 248348736}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &148711366
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6310,6 +6313,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 865960335}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &183904649
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6957,6 +6961,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 416913554}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &198019150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7210,6 +7215,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 912177144}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &206010565
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7273,6 +7279,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1566668222}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &206276477
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9118,6 +9125,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 760327294}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &273076118
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9845,6 +9853,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 386437184}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &296591015
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10129,6 +10138,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1092847541}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &303964044
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11344,6 +11354,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 991091152}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &335571846
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12223,6 +12234,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1134916631}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &349885028
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13058,6 +13070,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2131521728}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &363867154
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13422,6 +13435,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 222306832}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &368643335
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15884,6 +15898,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1177865534}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &426767073
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16680,12 +16695,6 @@ Transform:
   m_Father: {fileID: 643725363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -46.13, y: 0, z: 0}
---- !u!4 &457085730 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7215042033065230734, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &458898892
 GameObject:
   m_ObjectHideFlags: 0
@@ -16828,6 +16837,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1609293389}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &463369682
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19230,6 +19240,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1590456981}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &533793846
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19461,6 +19472,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1738656525}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &537431356
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19922,12 +19934,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e4f7d4e413685e46817bd301c5363ed, type: 3}
---- !u!4 &545554816 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6910567189587864308, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &547518728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20022,12 +20028,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 204ee5074c70b384f970c924178316cc,
     type: 3}
   m_PrefabInstance: {fileID: 547518728}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &549476534 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6301474076069580183, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549708700
 PrefabInstance:
@@ -21449,6 +21449,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1395070677}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &580966035
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22849,6 +22850,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 476894770}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &608380069
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23261,6 +23263,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 575856752}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &619020745
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23324,6 +23327,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1009802150}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &620459557
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24108,6 +24112,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 437134642}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &643725365
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24647,6 +24652,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1037902539}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &651866440
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26589,7 +26595,7 @@ GameObject:
   - component: {fileID: 705507998}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26690,6 +26696,7 @@ MonoBehaviour:
   TimeRewindFill: {fileID: 1876193692}
   player: {fileID: 126108599}
   textDisplay: {fileID: 1045976401}
+  score: 0
   rewindTarget: {fileID: 0}
 --- !u!114 &705507997
 MonoBehaviour:
@@ -27168,6 +27175,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2035391483}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &712453211
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27379,6 +27387,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2044229736}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &724996007
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29276,6 +29285,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2145511736}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &794301178
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31091,6 +31101,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 470422785}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &838349762
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34845,6 +34856,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 508101851}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &944090230
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35603,6 +35615,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1630159941}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &956138976
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36232,12 +36245,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966105066}
   m_Mesh: {fileID: 2403778913535659307, guid: ebddc49582b92de4886422bebf48fdf7, type: 3}
---- !u!4 &966748485 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6883891159914925115, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &966811612
 GameObject:
   m_ObjectHideFlags: 0
@@ -36287,6 +36294,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 582261121}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &966811615
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36608,6 +36616,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1480244873}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &976123027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36671,6 +36680,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1910145954}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &976842591
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37885,6 +37895,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 10949804}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1030044778
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39891,6 +39902,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 351005374}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1078799291
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40659,6 +40671,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1120132443}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1109144538
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42257,6 +42270,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1782544521}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1148580874
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42541,6 +42555,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2087914255}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1155532369
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46210,6 +46225,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 752840457}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1264213213
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46406,6 +46422,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 61704623}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1269952251
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46960,6 +46977,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 649366112}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1285866870
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47702,6 +47720,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 532307284}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1306392902
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47849,6 +47868,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1487706954}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1310117053
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49976,6 +49996,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 54440415}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1360550045
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -52668,6 +52689,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1363346095}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1445387199
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -52687,12 +52709,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 204ee5074c70b384f970c924178316cc,
     type: 3}
   m_PrefabInstance: {fileID: 1178137409}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1446875834 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6081470830831867213, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1449396382
 PrefabInstance:
@@ -54104,6 +54120,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 925794369}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1486864286
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56063,24 +56080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 1
-  tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 549476534}
-  - {fileID: 2044375571}
-  - {fileID: 125237058}
-  - {fileID: 1640833916}
-  - {fileID: 2079312536}
-  - {fileID: 457085730}
-  - {fileID: 966748485}
-  - {fileID: 1446875834}
-  - {fileID: 545554816}
-  - {fileID: 1596633888}
-  - {fileID: 0}
 --- !u!114 &1542750755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56093,10 +56092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RigLayers:
-  - rig: {fileID: 0}
-    active: 1
-  m_Effectors: []
 --- !u!1001 &1542929617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56235,6 +56230,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 685565018}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1544409163
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56304,6 +56300,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1807357945}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1545900559
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56393,6 +56390,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 188369995}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1546981213
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -57071,6 +57069,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1503615954}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1558087505
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -58079,6 +58078,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1665577098}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1580927450
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -58443,12 +58443,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595320366}
   m_CullTransparentMesh: 0
---- !u!4 &1596633888 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3042853510538474778, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1601138469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58587,6 +58581,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 890122264}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1601257354
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59823,6 +59818,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1143616980}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1618739790
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -60706,12 +60702,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204ee5074c70b384f970c924178316cc, type: 3}
---- !u!4 &1640833916 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1140809339128530811, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1641012478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60830,6 +60820,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1526790998}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1642357022
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62089,6 +62080,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1904956140}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1668391354
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62606,6 +62598,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1356933103}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1685102266
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -63091,6 +63084,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 971804167}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1703790339
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -63854,6 +63848,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1554153758}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1711721231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65330,6 +65325,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 193499906}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1757262968
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -66871,6 +66867,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 261198470}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1805365718
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -68027,6 +68024,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2132395541}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1844354345
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -68614,6 +68612,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1653174887}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1869646843
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -69546,6 +69545,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 2076145922}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1899037937
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -71167,6 +71167,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 608183069}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1948303656
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -71345,6 +71346,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 835961635}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1954455660
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -71614,6 +71616,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1735375732}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1964227863
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -72159,6 +72162,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 538929297}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1970539027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -72805,6 +72809,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1888483653}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1985935551
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -72874,6 +72879,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 1749887910}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1987186447
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -73102,6 +73108,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 868300317}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &1994843743
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -75486,12 +75493,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044229735}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2044375571 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6177863176959049658, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2047187031
 GameObject:
   m_ObjectHideFlags: 0
@@ -75669,6 +75670,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 314090122}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!136 &2048617737
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -76848,12 +76850,6 @@ CapsuleCollider:
   m_Height: 2.9485576
   m_Direction: 1
   m_Center: {x: -0.052998006, y: 1.4742783, z: -0.16076657}
---- !u!4 &2079312536 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4290645595090921558, guid: 3f48b11420668ff44b41cac8c560a57c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1606867777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2083501841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5e4f7d4e413685e46817bd301c5363ed,
@@ -78203,6 +78199,7 @@ MonoBehaviour:
   wayPoint2: {fileID: 663273695}
   speed: 4
   rotationDelta: 10
+  gum: {fileID: 0}
 --- !u!4 &2126943559
 Transform:
   m_ObjectHideFlags: 0

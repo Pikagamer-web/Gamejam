@@ -12,14 +12,14 @@ public class BotsAI : MonoBehaviour
     Transform currentWayPoint;
     CharacterControllerMine player;
     int flag = 0;
-   
-   
+    [SerializeField]GamePlayUIManager gum;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerMine>();
-       
+        gum = GameObject.FindGameObjectWithTag("Manager").GetComponent<GamePlayUIManager>();
         currentWayPoint = wayPoint2;
         speed2 = speed;
     }
@@ -27,7 +27,10 @@ public class BotsAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (gum.score > 500)
+        {
+            speed2 = (gum.score / 1000) * 35f;
+        }
          if (!player.HasCorruptionStarted)
         {
             Vector3 pos = transform.position;

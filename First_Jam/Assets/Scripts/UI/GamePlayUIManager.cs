@@ -15,7 +15,7 @@ public class GamePlayUIManager : MonoBehaviour
     Vector3 playerStartPosition;
     int tempSwitch = 0;
     [SerializeField] TextMeshProUGUI textDisplay;
-    float score = 0;
+    public float score = 0;
 
     [SerializeField] RewindTarget rewindTarget;
 
