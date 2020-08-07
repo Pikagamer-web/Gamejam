@@ -38,8 +38,11 @@ public class BotsAI : MonoBehaviour
             transform.position = pos;
             if (flag != 0) {currentWayPoint = wayPoint1; flag = 0; }
              transform.position = Vector3.MoveTowards(transform.position, currentWayPoint.position, speed * Time.deltaTime);
-             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-transform.position + currentWayPoint.position), rotationDelta * Time.deltaTime);
-             if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(currentWayPoint.position.x, currentWayPoint.position.z)) < 0.1f)
+            // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-transform.position + currentWayPoint.position), rotationDelta * Time.deltaTime);
+            Quaternion targetRot = Quaternion.LookRotation(-transform.position + currentWayPoint.position);
+            targetRot = Quaternion.Euler(transform.eulerAngles.x, targetRot.eulerAngles.y, transform.eulerAngles.z);
+            transform.rotation = Quaternion.Lerp(transform.rotation,targetRot, rotationDelta * Time.deltaTime);
+            if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(currentWayPoint.position.x, currentWayPoint.position.z)) < 0.1f)
              {
                  if (currentWayPoint == wayPoint2) { currentWayPoint = wayPoint1; }
                  else { currentWayPoint = wayPoint2; }
@@ -53,8 +56,11 @@ public class BotsAI : MonoBehaviour
             pos.y = 7f;
             transform.position = pos;
              transform.position = Vector3.MoveTowards(transform.position, currentWayPoint.position, speed * Time.deltaTime);
-             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-transform.position + currentWayPoint.position), rotationDelta * Time.deltaTime);
-             if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(currentWayPoint.position.x, currentWayPoint.position.z)) < 2f)
+            // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(-transform.position + currentWayPoint.position), rotationDelta * Time.deltaTime);
+            Quaternion targetRot = Quaternion.LookRotation(-transform.position + currentWayPoint.position);
+            targetRot = Quaternion.Euler(transform.eulerAngles.x, targetRot.eulerAngles.y, transform.eulerAngles.z);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, rotationDelta * Time.deltaTime);
+            if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(currentWayPoint.position.x, currentWayPoint.position.z)) < 2f)
              {
                  speed = 0;
              }
