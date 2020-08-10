@@ -11,14 +11,17 @@ public class Menu : MonoBehaviour
     
     [SerializeField] Canvas Menucanvas, LogoAnimCanvas, InstructionCanvas;
     int flag =0;
+    CharacterControllerMine player;
     // Start is called before the first frame update
 
+    [SerializeField]Joystick js;
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.None;
     }
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControllerMine>();
         InstructionCanvas.gameObject.SetActive(false);
         Menucanvas.gameObject.SetActive(false);
         LogoAnimCanvas.gameObject.SetActive(true);
@@ -50,5 +53,23 @@ public class Menu : MonoBehaviour
     public void OnXInstructions()
     {
         InstructionCanvas.gameObject.SetActive(false);
+    }
+
+    public void OnObsRewindDown()
+    {
+        player.LMBPressed = true;
+    }
+    public void OnFieldRewindDown()
+    {
+        player.RMBPressed = true;
+    }
+    public void OnObsRewindUp()
+    {
+        player.LMBPressed = false;
+    }
+
+    public void OnFieldRewindUP()
+    {
+        player.RMBPressed = false;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CamFollow : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CamFollow : MonoBehaviour
     public float mouseSensitivity;
     public Transform cam;
     float xRot;
+    float mouseX, mouseY;
+    int TouchId;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +23,40 @@ public class CamFollow : MonoBehaviour
     private void Update()
     {
         // rot
+        
+        for (int i =0; i< Input.touchCount; i++)
+        {
+            Touch touch = Input.touches[i];
 
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity;
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                if (touch.phase == TouchPhase.Moved)
+                {
+                    Vector3 delPos = Input.touches[i].deltaPosition;
+                    mouseX = delPos.x;
+                    mouseY = delPos.y;
+                }
+                else
+                {
+                    mouseX = mouseY = 0f;
+                }
+            }
+            else
+            {
+                mouseX = mouseY = 0;
+            }
+
+           
+
+            
+
+
+
+
+
+        }
+        // mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;
+        //mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity;
         
         xRot-= mouseY;
         xRot = Mathf.Clamp(xRot, -35, 35);
@@ -30,6 +64,25 @@ public class CamFollow : MonoBehaviour
         if (LookAtTargetEverytime) { cam.LookAt(target); }
     }
     // Update is called once per frame
+
+
+    bool IsOnUI(Vector3 touchpos)
+    {
+        bool retval = false;
+        PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+        pointerEventData.position = touchpos;
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerEventData, results);
+        for (int i =0; i< results.Count; i++)
+        {
+            if(results[i].gameObject.GetComponent<NotCamera>() == null)
+            {
+               // results
+            }
+        }
+        return retval;
+    }
+
     void LateUpdate()
     {
         // Set the pos

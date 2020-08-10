@@ -64,9 +64,15 @@ public class CharacterControllerMine : MonoBehaviour
 
     [SerializeField] FieldConfig fieldConfig;
     float fieldTimer = 0;
+
+    //___________________________________
+    public float h, v;
+    public bool LMBPressed, RMBPressed;
+    public Joystick js;
+    bool Mouse0Pressed = false;
     private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+      //  Cursor.lockState = CursorLockMode.Locked;
     }
     // Start is called before the first frame update
     void Start()
@@ -163,7 +169,16 @@ public class CharacterControllerMine : MonoBehaviour
 
           }*/
 
-        if (RewindTimeBar >= 20f && Input.GetMouseButtonDown(0)) // // We have to rewind the objects and self rather than the time itswelf a sa whole
+      /*  if (RewindTimeBar >= 20f && Input.GetMouseButtonDown(0)) // // We have to rewind the objects and self rather than the time itswelf a sa whole
+        {
+            if (currentREwindTarget != null)
+            {
+                currentREwindTarget.hasStaretedRewinding = true;
+                RewindTimeBar -= 20f;
+            }
+            
+        } */ 
+        if (RewindTimeBar >= 20f && Mouse0Pressed) // // We have to rewind the objects and self rather than the time itswelf a sa whole
         {
             if (currentREwindTarget != null)
             {
@@ -173,7 +188,15 @@ public class CharacterControllerMine : MonoBehaviour
             
         }     
     }
+    public void OnMouse0Pressed(bool val)
+    {
+        Mouse0Pressed = val;
+    }
 
+    public void OnMouse0Released(bool val)
+    {
+        Mouse0Pressed = false;
+    }
     private void ForceFieldBehaviour()
     {
         //RotationBehaviour (If not hit with bots)
@@ -237,8 +260,32 @@ public class CharacterControllerMine : MonoBehaviour
 
     void Movement()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        //  h = Input.GetAxis("Horizontal");
+        // v = Input.GetAxis("Vertical");
+        if (js.Horizontal > 0.2f)
+        {
+            h = 1;
+        }else if (js.Horizontal < -0.2f)
+        {
+            h = -1;
+        }
+        else
+        {
+            h = 0;
+        }
+
+        if (js.Vertical > 0.2f)
+        {
+            v = 1;
+        }else if (js.Vertical < -0.2f)
+        {
+            v = -1;
+        }
+        else
+        {
+            v = 0;
+        }
+        
         jumpPressed = Input.GetKeyDown(KeyCode.Space);
         //____________________
         if (v > 0 ) { playerState = PlayerState.speedingUP; }
